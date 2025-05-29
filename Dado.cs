@@ -50,6 +50,23 @@ namespace NewIdea
 
         }
         
+        public static (int[] dados, int soma,int menor) DefinirAtributosIniciais()
+        {
+            int soma = 0;
+            int[] dados = new int[4];
+            int menor = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                dados[i] = D6();
+            }
+
+            soma = dados.Sum();
+            menor = dados.Min();
+
+            return (dados, soma, menor);
+        }
+
         public static string RolagemMorte()
         {//Após criar a ficha do personagem, inserir aq um contador de sucessos e falhas,por enquato usar variáveis locais
          //Decidir dps quem cuida da contagem e morte, aqui ou a classe de ficha,provavelmente a ficha   
